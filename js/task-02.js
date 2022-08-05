@@ -7,7 +7,32 @@ const ingredients = [
   'Condiments',
 ];
 
-const createLi = document.createElement('li')
-console.log(createLi)
+function renderList(array, rootSelector) {
+  const targetRenderPoint = document.querySelector(rootSelector)
+  const listItems = []
+  array.forEach((ingredient) => {
+    const createLi = document.createElement('li');
+    createLi.classList.add('item');
+    createLi.textContent = ingredient
+    listItems.push(createLi)
+
+  })
+   targetRenderPoint.append(...listItems)
+}
+
+renderList(ingredients, "#ingredients")
+
+
+
+
+
+
+
+
+
+
+
+  
+
 
 
